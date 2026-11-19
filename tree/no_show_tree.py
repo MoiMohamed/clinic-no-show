@@ -2,6 +2,7 @@
 
 from pathlib import Path
 
+import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.metrics import (
     accuracy_score,
@@ -10,7 +11,7 @@ from sklearn.metrics import (
     recall_score,
 )
 from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeClassifier, export_text
+from sklearn.tree import DecisionTreeClassifier, export_text, plot_tree
 
 DATA = Path(__file__).with_name("clinic_appointments.csv")
 FEATURES = [
@@ -89,6 +90,19 @@ def main():
         if i >= 0
     ]
     print("splits on:", list(dict.fromkeys(used)))
+    fig, ax = plt.subplots(figsize=(12, 6))
+    plot_tree(
+        tree,
+        feature_names=FEATURES,
+        class_names=["checked-in", "no-show"],
+        filled=False,
+        impurity=False,
+        ax=ax,
+        fontsize=8,
+    )
+    fig.tight_layout()
+    fig.savefig(DATA.with_name("tree.png"), dpi=150)
+    print("wrote tree.png")
 
     pred_train = tree.predict(X_train)
     pred_test = tree.predict(X_test)

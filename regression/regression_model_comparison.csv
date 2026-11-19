@@ -1,0 +1,8 @@
+model,regularization,alpha,l1_ratio,features,n_features,train_r2,train_rmse,test_r2,test_rmse,auction_bought,auction_losers,auction_profit,picked_for
+baseline_mean,none,,,(none),0,0.0,7299.176307861226,-0.013677853506103954,6494.153971747817,14,10,-6000.0,
+ols,none,,,Mileage_K+Age_Years+Horsepower+Accident_yes,4,0.8729522822665665,2601.7004247991194,0.8226790130498031,2716.1432563826556,17,6,15800.0,lowest_test_rmse_and_highest_auction_profit
+ridge,ridge,10.0,,Mileage_K+Age_Years+Horsepower+Accident_yes+Num_Owners,5,0.8710930901594165,2620.6676803027262,0.8292527817206435,2665.320383469266,18,8,10700.0,lowest_test_rmse
+ridge,ridge,1.0,,Age_Years+Horsepower+Num_Owners,3,0.8292490066597985,3016.1676206214693,0.7450788840341288,3256.683153428407,17,6,16900.0,highest_auction_profit
+lasso,lasso,10.0,,Mileage_K+Age_Years+Horsepower+Accident_yes,4,0.8729468144517449,2601.7564095241596,0.8227021028094154,2715.9664100384143,17,6,15800.0,lowest_test_rmse_and_highest_auction_profit
+elastic_net,elastic_net,1.0,0.75,Mileage_K+Age_Years+Horsepower+Accident_yes+Num_Owners,5,0.852820602972151,2800.253596014261,0.8244386284765743,2702.633057533204,18,8,10700.0,lowest_test_rmse
+elastic_net,elastic_net,1.0,0.75,Mileage_K+Age_Years+Horsepower+Num_Owners,4,0.8382999621574623,2935.140633258841,0.8001440502278812,2883.574278889915,16,7,12400.0,highest_auction_profit

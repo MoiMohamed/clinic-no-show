@@ -1,0 +1,5 @@
+segment,member_count,age,visits_per_month,avg_visit_minutes,classes_per_month,months_member,monthly_extras_spend,name,gets_credit
+0,70,27.6,3.1,40.4,0.9,6.3,9.3,New and occasional,True
+1,60,64.0,12.0,47.0,3.9,58.7,16.4,Long-time regulars,True
+2,109,33.3,16.0,64.4,0.9,29.9,24.6,Solo regulars,False
+3,91,41.9,9.1,55.4,6.9,22.9,46.9,Class regulars,False
